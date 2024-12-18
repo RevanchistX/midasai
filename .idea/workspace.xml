@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d0cb285-459a-4068-982c-a98020bf4705" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/v1/password/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/v1/password/route.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +14,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="worker" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GoLibraries">
@@ -83,6 +87,10 @@
       <option name="presentableId" value="Default" />
       <updated>1734483860133</updated>
       <workItem from="1734483861116" duration="378000" />
+      <workItem from="1734484252652" duration="3756000" />
+      <workItem from="1734488030060" duration="395000" />
+      <workItem from="1734488438359" duration="1077000" />
+      <workItem from="1734489525776" duration="8182000" />
       <workItem from="1734484252652" duration="28000" />
     </task>
     <servers />
