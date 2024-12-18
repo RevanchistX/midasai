@@ -6,6 +6,7 @@ const PasswordGeneratorForm = ({length, amount, delimiter, setLength, setAmount,
                 type="number"
                 id="length"
                 value={length}
+                min="1"
                 onChange={(e) => setLength(Number(e.target.value))} // Convert input to number directly
                 className="appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
             />
@@ -16,6 +17,7 @@ const PasswordGeneratorForm = ({length, amount, delimiter, setLength, setAmount,
             <input
                 type="number"
                 id="amount"
+                min="1"
                 value={amount}
                 onChange={(e) => setAmount(Number(e.target.value))} // Convert input to number directly
                 className="appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
