@@ -1,11 +1,10 @@
 import {NextRequest, NextResponse} from "next/server";
-import {generatePasswords} from "../../../../../util/functions";
+import {generatePasswords} from "@/util/functions";
 
-export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
     try {
-        const {searchParams} = new URL(request.url);
-        const length = searchParams.get('length');
-        const amount = searchParams.get('amount');
+        const data = await request.json();
+        const {length, amount} = data;
 
         if (!length || !amount) {
             return NextResponse.json({error: 'Missing length or amount parameters'}, {status: 400});

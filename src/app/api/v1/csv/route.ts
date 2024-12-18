@@ -1,14 +1,12 @@
 import {NextRequest, NextResponse} from "next/server";
-import {validateOrigin} from "../../../../../util/functions";
 import {stringify} from 'csv-stringify';
-import {CSV_CONTENT_DISPOSITION, CSV_CONTENT_TYPE, CSV_HEADERS} from "../../../../../util/constants";
+import {CSV_CONTENT_DISPOSITION, CSV_CONTENT_TYPE, CSV_HEADERS} from "@/util/constants";
 
-export async function GET(request: NextRequest) {
-    if (!validateOrigin(request)) {
-        return NextResponse.json({error: "Forbidden"}, {status: 403});
-    }
+export async function POST(request: NextRequest) {
     try {
-        const {query: {passwords, delimiter}} = request;
+        const data = await request.json();
+        const {passwords, delimiter} = data;
+
         const csv = await new Promise((resolve, reject) => {
             stringify(passwords, {
                 header: true,
