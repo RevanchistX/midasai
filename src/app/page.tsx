@@ -52,7 +52,7 @@ export default function Home() {
             {!loading && csv &&
                 <div className="max-w-sm mx-auto pb-10 -my-5 bg-black rounded-lg shadow-md">
                     <div className="flex justify-center items-center my-auto mx-auto bg-black rounded-lg shadow-md">
-                        <a href={csv} download="password.csv"
+                        <a href={csv} download="passwords.csv"
                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
                             Download
                         </a>
