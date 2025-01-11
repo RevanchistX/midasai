@@ -41,10 +41,12 @@ export default function Home() {
                     })
                     .catch(() => {
                         alert("the values you inserted make Vercel cry, please try again");
+                        window.location.reload();
                     })
             })
             .catch(() => {
                 alert("the values you inserted make Vercel cry, please try again");
+                window.location.reload();
             })
     }
 
@@ -66,6 +68,7 @@ export default function Home() {
             })
             .catch(() => {
                 alert("the values you inserted make Vercel cry, please try again");
+                window.location.reload();
             })
     }
     return (
@@ -135,6 +138,5 @@ export default function Home() {
                 !loading && Object.keys(stressResult)?.length !== 0 && <StressTable stressResults={stressResult}/>
             }
         </div>
-    )
-        ;
+    );
 }
