@@ -39,6 +39,12 @@ export default function Home() {
                         setCsv(URL.createObjectURL(csvResponse.data));
                         setLoading(false);
                     })
+                    .catch(() => {
+                        alert("the values you inserted make Vercel cry, please try again");
+                    })
+            })
+            .catch(() => {
+                alert("the values you inserted make Vercel cry, please try again");
             })
     }
 
@@ -57,6 +63,9 @@ export default function Home() {
                 setLoading(false)
                 setTakeWhile(false);
                 setAverage(stressResponse.data.average);
+            })
+            .catch(() => {
+                alert("the values you inserted make Vercel cry, please try again");
             })
     }
     return (
@@ -83,11 +92,13 @@ export default function Home() {
                 callbacks={{handleSubmit, handleStressTest}}
             />
             {
-                loading && <div className="flex justify-center items-center text-red-600 font-bold pt-5">Loading...</div>
+                loading &&
+                <div className="flex justify-center items-center text-red-600 font-bold pt-5">Loading...</div>
             }
             {
                 loading && takeWhile &&
-                <div className="flex justify-center items-center text-red-800 font-bold">This might take a while...</div>
+                <div className="flex justify-center items-center text-red-800 font-bold">This might take a
+                    while...</div>
             }
             {
                 !loading && passwords?.length !== 0 && <PasswordTable
@@ -107,7 +118,8 @@ export default function Home() {
             }
             {!loading && Object.keys(average).length !== 0 &&
                 <div className="flex justify-center items-center gap-10 py-5">
-                    <div className="w-fit bg-blue-800 rounded-2xl grid-cols-1 text-center p-5 shadow-2xl drop-shadow-2xl">
+                    <div
+                        className="w-fit bg-blue-800 rounded-2xl grid-cols-1 text-center p-5 shadow-2xl drop-shadow-2xl">
                         HASH
                         <div>total: {average['hash']['total']} ms</div>
                         <div>average: {average['hash']['average']} ms</div>
