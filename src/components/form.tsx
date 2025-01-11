@@ -11,7 +11,7 @@ const PasswordGeneratorForm = ({
                                }) => {
     const {handleSubmit, handleStressTest} = callbacks;
     return (
-        <form className="max-w-sm mx-auto p-6 bg-black rounded-lg shadow-md">
+        <form className="max-w-sm mx-auto p-6 bg-black rounded-lg shadow-2xl drop-shadow-2xl">
             <div className="mb-4">
                 <label htmlFor="length">Length</label>
                 <input
@@ -61,13 +61,13 @@ const PasswordGeneratorForm = ({
                 <button
                     onClick={handleSubmit}
                     type="submit"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    className="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Generate
                 </button>
                 <button
                     onClick={handleStressTest}
                     type="submit"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    className="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Stress
                 </button>
             </div>

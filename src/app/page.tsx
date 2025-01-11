@@ -61,12 +61,15 @@ export default function Home() {
     }
     return (
         <div>
-            <div className="grid-cols-1 content-center place-items-center">
-                <Image src={icon} width={100} alt={"icon"}/>
-                <h1 className="text-3xl"> Password Generator</h1>
-                <div>Choose length and amount to generate passwords</div>
-                <div>Use delimiter for CSV export</div>
-                <div>Set the stress amount to see statistics</div>
+            <div>
+                <div
+                    className="bg-blue-800 shadow-2xl grid-cols-1 place-items-center rounded-b-xl drop-shadow-2xl pb-5 mb-5">
+                    <Image src={icon} width={100} alt={"icon"}/>
+                    <h1 className="text-3xl"> Password Generator</h1>
+                    <div>Choose length and amount to generate passwords</div>
+                    <div>Use delimiter for CSV export</div>
+                    <div>Set the stress amount to see statistics</div>
+                </div>
             </div>
             <PasswordGeneratorForm
                 length={length}
@@ -80,11 +83,11 @@ export default function Home() {
                 callbacks={{handleSubmit, handleStressTest}}
             />
             {
-                loading && <div className="flex justify-center items-center text-red-700">Loading...</div>
+                loading && <div className="flex justify-center items-center text-red-600 font-bold pt-5">Loading...</div>
             }
             {
                 loading && takeWhile &&
-                <div className="flex justify-center items-center text-red-700">This might take a while...</div>
+                <div className="flex justify-center items-center text-red-800 font-bold">This might take a while...</div>
             }
             {
                 !loading && passwords?.length !== 0 && <PasswordTable
@@ -92,25 +95,27 @@ export default function Home() {
             }
             {
                 !loading && csv &&
-                <div className="max-w-sm mx-auto pb-10 -my-5 bg-black rounded-lg shadow-md">
-                    <div className="flex justify-center items-center my-auto mx-auto bg-black rounded-lg shadow-md">
+                <div className="max-w-sm mx-auto pb-10 -my-5 bg-black rounded-lg shadow-2xl drop-shadow-2xl">
+                    <div
+                        className="flex justify-center items-center my-auto mx-auto bg-black rounded-lg shadow-2xl drop-shadow-2xl">
                         <a href={csv} download="passwords.csv"
-                           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
+                           className="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
                             Download
                         </a>
                     </div>
                 </div>
             }
-            {
-                !loading && Object.keys(average).length !== 0 &&
-                <div className="flex justify-center items-center gap-10">
-                    <div>
-                        <div>hash total: {average['hash']['total']}</div>
-                        <div>hash average: {average['hash']['average']}</div>
+            {!loading && Object.keys(average).length !== 0 &&
+                <div className="flex justify-center items-center gap-10 py-5">
+                    <div className="w-fit bg-blue-800 rounded-2xl grid-cols-1 text-center p-5 shadow-2xl drop-shadow-2xl">
+                        HASH
+                        <div>total: {average['hash']['total']} ms</div>
+                        <div>average: {average['hash']['average']} ms</div>
                     </div>
-                    <div>
-                        <div>set total: {average['set']['total']}</div>
-                        <div>set average: {average['set']['average']}</div>
+                    <div className="bg-blue-800 rounded-2xl grid-cols-1 text-center p-5 shadow-2xl drop-shadow-2xl">
+                        SET
+                        <div>total: {average['set']['total']} ms</div>
+                        <div>average: {average['set']['average']} ms</div>
                     </div>
                 </div>
             }
