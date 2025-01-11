@@ -75,10 +75,10 @@ export default function Home() {
         <div>
             <div>
                 <div
-                    className="bg-blue-800 shadow-2xl grid-cols-1 place-items-center text-xs md:text-xl rounded-b-xl drop-shadow-2xl pb-5 mb-5 mx-auto overflow-hidden">
-                    <Image src={icon} width={100} alt={"icon"} className="flex justify-center"/>
-                    <div className="text-3xl text-center"> Password Generator</div>
-                    <ul className="text-center">
+                    className="bg-blue-800 shadow-2xl text-xs md:text-xl rounded-b-xl drop-shadow-2xl pb-5 mb-5 mx-auto overflow-hidden">
+                    <ul className="text-center grid-cols-1 place-items-center">
+                        <li><Image src={icon} width={100} alt={"icon"}/></li>
+                        <li className="text-3xl text-center"> Password Generator</li>
                         <li>
                             Choose length and amount to generate passwords
                         </li>
