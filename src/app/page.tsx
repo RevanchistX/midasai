@@ -81,15 +81,12 @@ export default function Home() {
                     <ul className="text-center">
                         <li>
                             Choose length and amount to generate passwords
-
                         </li>
                         <li>
                             Use delimiter for CSV export
-
                         </li>
                         <li>
                             Set the stress amount to see statistics
-
                         </li>
                     </ul>
 
