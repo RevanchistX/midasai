@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Password Generator",
     description: "Generate unique passwords",
     openGraph: {
-        images: "./favico.ico"
+        images: ["https://midasai.vercel.app/favicon.ico"]
     }
 };
 
