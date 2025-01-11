@@ -49,8 +49,9 @@ const PasswordGeneratorForm = ({
             <div className="mb-4">
                 <label htmlFor="stress">Stress</label>
                 <input
-                    type="text"
+                    type="number"
                     id="stress"
+                    min="2"
                     value={stress}
                     onChange={(e) => setStress(e.target.value)}
                     className="appearance-none border rounded w-full py-2 text-black leading-tight focus:outline-none focus:shadow-outline"

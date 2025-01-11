@@ -13,7 +13,7 @@ export default function Home() {
     const [delimiter, setDelimiter] = useState(",");
     const [csv, setCsv] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
-    const [stress, setStress] = useState(100);
+    const [stress, setStress] = useState(15);
     const [stressResult, setStressResult] = useState({});
     const [takeWhile, setTakeWhile] = useState(false);
     const [average, setAverage] = useState({});
