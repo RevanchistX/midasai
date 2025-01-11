@@ -75,7 +75,7 @@ export default function Home() {
         <div>
             <div>
                 <div
-                    className="bg-blue-800 shadow-2xl grid-cols-1 place-items-center text-xs md:text-xl rounded-b-xl drop-shadow-2xl md:pl-0 pl-5 pb-5 mb-5 mx-auto overflow-hidden">
+                    className="bg-blue-800 shadow-2xl grid-cols-1 place-items-center text-xs md:text-xl rounded-b-xl drop-shadow-2xl pb-5 mb-5 mx-auto overflow-hidden">
                     <Image src={icon} width={100} alt={"icon"}/>
                     <div className="text-3xl text-center"> Password Generator</div>
                     <ul className="text-center">
