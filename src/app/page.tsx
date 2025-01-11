@@ -5,6 +5,8 @@ import React, {useState} from "react";
 import PasswordGeneratorForm from "@/components/form";
 import PasswordTable from "@/components/table";
 import StressTable from "@/components/table-stress";
+import Image from "next/image";
+import icon from "../app/favicon.ico"
 
 export default function Home() {
     const [length, setLength] = useState<number>(12);
@@ -59,6 +61,13 @@ export default function Home() {
     }
     return (
         <div>
+            <div className="grid-cols-1 content-center place-items-center">
+                <Image src={icon} width={100} alt={"icon"}/>
+                <h1 className="text-3xl"> Password Generator</h1>
+                <div>Choose length and amount to generate passwords</div>
+                <div>Use delimiter for CSV export</div>
+                <div>Set the stress amount to see statistics</div>
+            </div>
             <PasswordGeneratorForm
                 length={length}
                 amount={amount}
@@ -70,12 +79,19 @@ export default function Home() {
                 setStress={setStress}
                 callbacks={{handleSubmit, handleStressTest}}
             />
-            {loading && <div className="flex justify-center items-center text-red-700">Loading...</div>}
-            {loading && takeWhile &&
-                <div className="flex justify-center items-center text-red-700">This might take a while...</div>}
-            {!loading && passwords?.length !== 0 && <PasswordTable
-                passwords={passwords}/>}
-            {!loading && csv &&
+            {
+                loading && <div className="flex justify-center items-center text-red-700">Loading...</div>
+            }
+            {
+                loading && takeWhile &&
+                <div className="flex justify-center items-center text-red-700">This might take a while...</div>
+            }
+            {
+                !loading && passwords?.length !== 0 && <PasswordTable
+                    passwords={passwords}/>
+            }
+            {
+                !loading && csv &&
                 <div className="max-w-sm mx-auto pb-10 -my-5 bg-black rounded-lg shadow-md">
                     <div className="flex justify-center items-center my-auto mx-auto bg-black rounded-lg shadow-md">
                         <a href={csv} download="passwords.csv"
@@ -85,18 +101,23 @@ export default function Home() {
                     </div>
                 </div>
             }
-            {!loading && Object.keys(average).length !== 0 && <div className="flex justify-center items-center gap-10">
-                <div>
-                    <div>hash total: {average['hash']['total']}</div>
-                    <div>hash average: {average['hash']['average']}</div>
+            {
+                !loading && Object.keys(average).length !== 0 &&
+                <div className="flex justify-center items-center gap-10">
+                    <div>
+                        <div>hash total: {average['hash']['total']}</div>
+                        <div>hash average: {average['hash']['average']}</div>
+                    </div>
+                    <div>
+                        <div>set total: {average['set']['total']}</div>
+                        <div>set average: {average['set']['average']}</div>
+                    </div>
                 </div>
-                <div>
-                    <div>set total: {average['set']['total']}</div>
-                    <div>set average: {average['set']['average']}</div>
-                </div>
-            </div>
             }
-            {!loading && Object.keys(stressResult)?.length !== 0 && <StressTable stressResults={stressResult}/>}
+            {
+                !loading && Object.keys(stressResult)?.length !== 0 && <StressTable stressResults={stressResult}/>
+            }
         </div>
-    );
+    )
+        ;
 }
