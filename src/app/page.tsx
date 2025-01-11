@@ -75,12 +75,24 @@ export default function Home() {
         <div>
             <div>
                 <div
-                    className="bg-blue-800 shadow-2xl grid-cols-1 place-items-center text-xs md:text-xl rounded-b-xl drop-shadow-2xl pb-5 mb-5">
+                    className="bg-blue-800 shadow-2xl grid-cols-1 place-items-center text-xs md:text-xl rounded-b-xl drop-shadow-2xl md:pl-0 pl-5 pb-5 mb-5 mx-auto overflow-hidden">
                     <Image src={icon} width={100} alt={"icon"}/>
-                    <h1 className="text-3xl"> Password Generator</h1>
-                    <div>Choose length and amount to generate passwords</div>
-                    <div>Use delimiter for CSV export</div>
-                    <div>Set the stress amount to see statistics</div>
+                    <div className="text-3xl text-center"> Password Generator</div>
+                    <ul className="text-center">
+                        <li>
+                            Choose length and amount to generate passwords
+
+                        </li>
+                        <li>
+                            Use delimiter for CSV export
+
+                        </li>
+                        <li>
+                            Set the stress amount to see statistics
+
+                        </li>
+                    </ul>
+
                 </div>
             </div>
             <PasswordGeneratorForm
