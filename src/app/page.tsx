@@ -4,6 +4,7 @@ import axios from "axios";
 import React, {useState} from "react";
 import PasswordGeneratorForm from "@/components/form";
 import PasswordTable from "@/components/table";
+import StressTable from "@/components/table-stress";
 
 export default function Home() {
     const [length, setLength] = useState<number>(12);
@@ -12,6 +13,10 @@ export default function Home() {
     const [delimiter, setDelimiter] = useState(",");
     const [csv, setCsv] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
+    const [stress, setStress] = useState(100);
+    const [stressResult, setStressResult] = useState({});
+    const [takeWhile, setTakeWhile] = useState(false);
+    const [average, setAverage] = useState({});
 
 
     const handleSubmit = async (event) => {
@@ -34,21 +39,42 @@ export default function Home() {
                     })
             })
     }
+
+    const handleStressTest = async (event) => {
+        event.preventDefault();
+        setLoading(true);
+        setTakeWhile(true);
+        await axios.post("/api/v1/stresstest", {length, amount, stress})
+            .then(async (stressResponse) => {
+                const stressList = stressResponse.data.timeData.map((entry) => ({
+                    iteration: entry['iteration'],
+                    hash: entry['hash'],
+                    set: entry['set']
+                }));
+                setStressResult(stressList);
+                setLoading(false)
+                setTakeWhile(false);
+                setAverage(stressResponse.data.average);
+            })
+    }
     return (
         <div>
             <PasswordGeneratorForm
                 length={length}
                 amount={amount}
                 delimiter={delimiter}
+                stress={stress}
                 setLength={setLength}
                 setAmount={setAmount}
                 setDelimiter={setDelimiter}
-                handleSubmit={handleSubmit}
+                setStress={setStress}
+                callbacks={{handleSubmit, handleStressTest}}
             />
             {loading && <div className="flex justify-center items-center text-red-700">Loading...</div>}
+            {loading && takeWhile &&
+                <div className="flex justify-center items-center text-red-700">This might take a while...</div>}
             {!loading && passwords?.length !== 0 && <PasswordTable
-                passwords={passwords}
-                csv={csv}/>}
+                passwords={passwords}/>}
             {!loading && csv &&
                 <div className="max-w-sm mx-auto pb-10 -my-5 bg-black rounded-lg shadow-md">
                     <div className="flex justify-center items-center my-auto mx-auto bg-black rounded-lg shadow-md">
@@ -59,6 +85,18 @@ export default function Home() {
                     </div>
                 </div>
             }
+            {!loading && Object.keys(average).length !== 0 && <div className="flex justify-center items-center gap-10">
+                <div>
+                    <div>hash total: {average['hash']['total']}</div>
+                    <div>hash average: {average['hash']['average']}</div>
+                </div>
+                <div>
+                    <div>set total: {average['set']['total']}</div>
+                    <div>set average: {average['set']['average']}</div>
+                </div>
+            </div>
+            }
+            {!loading && Object.keys(stressResult)?.length !== 0 && <StressTable stressResults={stressResult}/>}
         </div>
     );
 }
