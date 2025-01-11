@@ -72,7 +72,7 @@ const StressTable = ({stressResults}) => {
     });
 
     return (
-        <div className="max-w-sm mx-auto p-6 bg-black rounded-lg shadow-2xl drop-shadow-2xl">
+        <div className="max-w-sm mx-auto p-6 bg-black rounded-lg shadow-2xl drop-shadow-2xl mb-10">
             <div className="flex flex-col w-full">
                 <div className="overflow-x-auto flex flex-col gap-2">
                     <div className="flex gap-4 justify-center items-center">

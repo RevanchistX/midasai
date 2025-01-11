@@ -75,7 +75,7 @@ export default function Home() {
         <div>
             <div>
                 <div
-                    className="bg-blue-800 shadow-2xl grid-cols-1 place-items-center rounded-b-xl drop-shadow-2xl pb-5 mb-5">
+                    className="bg-blue-800 shadow-2xl grid-cols-1 place-items-center text-xs md:text-xl rounded-b-xl drop-shadow-2xl pb-5 mb-5">
                     <Image src={icon} width={100} alt={"icon"}/>
                     <h1 className="text-3xl"> Password Generator</h1>
                     <div>Choose length and amount to generate passwords</div>
@@ -109,7 +109,7 @@ export default function Home() {
             }
             {
                 !loading && csv &&
-                <div className="max-w-sm mx-auto pb-10 -my-5 bg-black rounded-lg shadow-2xl drop-shadow-2xl">
+                <div className="max-w-sm mx-auto pb-10 mb-5 -my-5 bg-black rounded-lg shadow-2xl drop-shadow-2xl">
                     <div
                         className="flex justify-center items-center my-auto mx-auto bg-black rounded-lg shadow-2xl drop-shadow-2xl">
                         <a href={csv} download="passwords.csv"
