@@ -1,0 +1,1 @@
+function(b,c,a){if(b.length>0){$("div#camLoading").remove();setTimeout(function(){ksenia.maps.updateCameraDiv(c)},parseInt(c.refresh)*1000);a=null}}

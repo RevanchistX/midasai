@@ -1,0 +1,16 @@
+{
+  "currentMap": null,
+  "commandList": null,
+  "zonesStatus": null,
+  "partitionsStatus": null,
+  "outputsStatus": null,
+  "stopBackgroundPolling": false,
+  "backgroundPollingStopped": false,
+  "localConnection": true,
+  "actionFlags": {
+    "firstAction": null,
+    "lastAction": null
+  },
+  "camCounter": 0,
+  "currentPostfix": "&"
+}
