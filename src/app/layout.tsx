@@ -1,6 +1,5 @@
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
-import {Metadata} from "next";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -26,25 +25,6 @@ export default function RootLayout({children,}: Readonly<{
     return (
         <html lang="en">
         <head>
-            {/*<meta charSet="utf-8"/>*/}
-            {/*<meta name="viewport" content="width=device-width, initial-scale=1"/>*/}
-            {/*<title>Password Generator</title>*/}
-            {/*<meta name="description" content="Generate unique passwords"/>*/}
-            {/*<meta property="og:title" content="Password Generator"/>*/}
-            {/*<meta property="og:description" content="Generate unique passwords"/>*/}
-            {/*<meta property="og:image:type" content="image/jpeg"/>*/}
-            {/*<meta property="og:image:width" content="3000"/>*/}
-            {/*<meta property="og:image:height" content="2409"/>*/}
-            {/*<meta property="og:image" content="https://midasai.vercel.app/opengraph-image.jpg?8ecdb2e03132f115"/>*/}
-            {/*<meta name="twitter:card" content="summary_large_image"/>*/}
-            {/*<meta name="twitter:title" content="Password Generator"/>*/}
-            {/*<meta name="twitter:description" content="Generate unique passwords"/>*/}
-            {/*<meta name="twitter:image:type" content="image/jpeg"/>*/}
-            {/*<meta name="twitter:image:width" content="3000"/>*/}
-            {/*<meta name="twitter:image:height" content="2409"/>*/}
-            {/*<meta name="twitter:image" content="https://midasai.vercel.app/opengraph-image.jpg?8ecdb2e03132f115"/>*/}
-            <meta charSet="utf-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
             <title>Непокор.мк - Непокорот е слобода!</title>
             <meta name="description"
                   content="Најголем избор на македонски патриотски производи на едно место. Од македонски знамиња, македонски дресови, маици, дуксери, блузони до стикери, шишиња и други производи за патриоти. Посетете нè сега!"/>
