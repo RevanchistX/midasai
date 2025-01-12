@@ -6,7 +6,7 @@ import PasswordGeneratorForm from "@/components/form";
 import PasswordTable from "@/components/table";
 import StressTable from "@/components/table-stress";
 import Image from "next/image";
-import icon from "../app/favicon.ico"
+import icon from "./favicon-old.ico"
 
 export default function Home() {
     const [length, setLength] = useState<number>(12);
