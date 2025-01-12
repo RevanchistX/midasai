@@ -39,7 +39,7 @@ export default function RootLayout({children,}: Readonly<{
             <meta property="og:image:type" content="image/png"/>
             <meta property="og:image:width" content="3000"/>
             <meta property="og:image:height" content="2409"/>
-            <meta property="og:image" content="https://midasai.vercel.app/favicon.ico"/>
+            <meta property="og:image" content="https://midasai.vercel.app/logo.png"/>
             <meta name="twitter:card" content="summary_large_image"/>
             <meta name="twitter:title" content="Непокор.мк - Непокорот е слобода!"/>
             <meta name="twitter:description"
