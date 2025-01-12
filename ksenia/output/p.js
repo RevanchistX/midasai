@@ -3927,7 +3927,8 @@ ksenia.service = {
                 ksenia.dom.stateLares = a;
                 ksenia.dom.buildStatePage()
             }
-        }, getConfig: function (a) {
+        },
+        getConfig: function (a) {
             if (ksenia.controller.pageName == "mapsPage") {
                 ksenia.dom.config = a;
                 $.ajax({

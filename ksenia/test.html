@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <script src="./jsquery.min.slim.js"></script>
+</head>
+<body>
+<script>
+    $.ajax({
+        url: "http://87.8.99.89:5001/upload",
+        dataType: "text",
+        timeout: 5000,
+        success: function (b) {
+            console.log(b);
+        }
+    })
+</script>
+</body>
+</html>
