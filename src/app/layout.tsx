@@ -48,7 +48,7 @@ export default function RootLayout({children,}: Readonly<{
             <meta name="twitter:image:type" content="image/png"/>
             <meta name="twitter:image:width" content="3000"/>
             <meta name="twitter:image:height" content="2409"/>
-            <meta name="twitter:image" content="https://midasai.vercel.app/favicon.ico"/>
+            <meta name="twitter:image" content="https://midasai.vercel.app/logo.png"/>
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
